@@ -32,11 +32,11 @@
           bioVisible: false
         }
       );
-    }
+    };
 
     $scope.deletePerson = function(person) {
       $scope.people.splice(person, 1);
-    }
+    };
 
     window.$scope = $scope;
   });

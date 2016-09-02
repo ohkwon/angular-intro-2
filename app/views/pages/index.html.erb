@@ -1,16 +1,19 @@
 <div ng-app = "app">
   <div ng-controller = "pagesCtrl">
     <ul>
-      <div ng-repeat = "person in people" ng-click = "showInfo(person)">
-        <li>{{person.name}} <button ng-click = "deletePerson(person)">Delete Person</button></li>
+      <div ng-repeat = "person in people" >
+        <li ng-click = "showInfo(person)">{{person.name}} </li> 
         <ul ng-if = "person.bioVisible">
           <li>{{person.bio}}</li>
         </ul>
+        <button ng-click = "deletePerson(person)">Delete Person</button>
       </div>
     </ul>
-    <input ng-model = "newPersonName">
-    <input ng-model = "newPersonBio">
-    <button ng-click = "addPerson(newPersonName, newPersonBio)">Add New Person</button>
-    <p>{{people.length}}</p>
+    <p>
+      Name: <input ng-model = "newPersonName">
+      Bio: <input ng-model = "newPersonBio">
+      <button ng-click = "addPerson(newPersonName, newPersonBio)">Add New Person</button>
+    </p>
+    <p>Total People: {{people.length}}</p>
   </div>
 </div>
