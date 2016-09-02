@@ -1,0 +1,16 @@
+<div ng-app = "app">
+  <div ng-controller = "pagesCtrl">
+    <ul>
+      <div ng-repeat = "person in people" ng-click = "showInfo(person)">
+        <li>{{person.name}} <button ng-click = "deletePerson(person)">Delete Person</button></li>
+        <ul ng-if = "person.bioVisible">
+          <li>{{person.bio}}</li>
+        </ul>
+      </div>
+    </ul>
+    <input ng-model = "newPersonName">
+    <input ng-model = "newPersonBio">
+    <button ng-click = "addPerson(newPersonName, newPersonBio)">Add New Person</button>
+    <p>{{people.length}}</p>
+  </div>
+</div>
